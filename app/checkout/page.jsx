@@ -56,8 +56,10 @@ export default function CheckoutPage() {
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to send order");
+        throw new Error(data.error || "Failed to send order");
       }
 
       // Show success message and clear cart
@@ -65,7 +67,7 @@ export default function CheckoutPage() {
       localStorage.removeItem("cart");
     } catch (error) {
       console.error("Error sending order:", error);
-      alert("Failed to send order. Please try again.");
+      alert(error.message || "Failed to send order. Please try again.");
     } finally {
       setIsSubmitting(false);
     }

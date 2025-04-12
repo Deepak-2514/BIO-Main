@@ -4,6 +4,8 @@ import nodemailer from "nodemailer";
 export async function POST(request) {
   try {
     const data = await request.json();
+    console.log("Received order data:", data);
+
     const {
       name,
       companyName,
@@ -18,6 +20,26 @@ export async function POST(request) {
       products,
     } = data;
 
+    // Validate required fields
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !address ||
+      !city ||
+      !state ||
+      !country ||
+      !zipCode ||
+      !deliveryDate ||
+      !products ||
+      !Array.isArray(products)
+    ) {
+      return NextResponse.json(
+        { error: "Missing required fields or invalid data format" },
+        { status: 400 }
+      );
+    }
+
     console.log("Received order from:", email);
 
     // Create email transporter
@@ -31,8 +53,8 @@ export async function POST(request) {
 
     // Calculate total quantity
     const totalQuantity = products.reduce(
-      (sum, product) => sum + product.quantity,
-      0,
+      (sum, product) => sum + (product.quantity || 0),
+      0
     );
 
     // Format delivery date
@@ -43,7 +65,7 @@ export async function POST(request) {
         year: "numeric",
         month: "long",
         day: "numeric",
-      },
+      }
     );
 
     // Email content for admin
@@ -78,7 +100,7 @@ export async function POST(request) {
               <p><strong>Size:</strong> ${product.selectedSize}</p>
               <p><strong>Quantity:</strong> ${product.quantity}</p>
             </div>
-          `,
+          `
             )
             .join("")}
         </div>
@@ -121,7 +143,7 @@ export async function POST(request) {
       // Return error specifically about customer email
       return NextResponse.json(
         { error: "Failed to send customer confirmation email" },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
@@ -129,8 +151,8 @@ export async function POST(request) {
   } catch (error) {
     console.error("Error processing order:", error);
     return NextResponse.json(
-      { error: "Failed to process order" },
-      { status: 500 },
+      { error: error.message || "Failed to process order" },
+      { status: 500 }
     );
   }
 }

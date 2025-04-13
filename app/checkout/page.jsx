@@ -309,7 +309,7 @@ export default function CheckoutPage() {
               disabled={isSubmitting}
               className="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? "Placing Order..." : "Place Order"}
+              {isSubmitting ? "Placing Order..." : "Request for Quote"}
             </button>
           </div>
         </form>

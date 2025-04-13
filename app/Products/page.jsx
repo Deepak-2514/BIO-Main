@@ -40,21 +40,14 @@ const products = [
     name: "Soup Bowls",
     description: "Palm areca soup bowls",
     image: "/soupBowl.jpeg?v=1",
-    sizes: ["5 inch round", "6 inch round"],
+    sizes: ["5 inch round", "6 inch round", "4 × 4 Square Bowls"],
   },
   {
     id: "square-tray",
     name: "Square Trays",
     description: "Palm areca square trays",
     image: "/squareTray.jpeg?v=1",
-    sizes: [
-      "5 × 5 square",
-      "6 × 6 square",
-      "7 × 7 square",
-      "8 × 8 square",
-      "9 × 9 square",
-      "10 × 10 square",
-    ],
+    sizes: ["Medium"],
   },
   {
     id: "rectangular-tray",
@@ -208,7 +201,7 @@ export default function ProductsPage() {
 
   const updateQuantity = (itemId, newQuantity) => {
     const updatedCart = cartItems.map((item) =>
-      item.id === itemId ? { ...item, quantity: newQuantity } : item,
+      item.id === itemId ? { ...item, quantity: newQuantity } : item
     );
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));

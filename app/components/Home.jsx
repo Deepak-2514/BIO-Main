@@ -158,9 +158,9 @@ const ProductsSection = () => (
           image: "/squareTray.jpeg",
         },
         {
-          name: "Rectangular Tray",
-          description: "Plam areca rectangular tray",
-          image: "/rectangularTray.jpeg",
+          name: "Round Plate",
+          description: "Plam areca Round Plate",
+          image: "/roundPlate.jpeg.jpeg",
         },
       ].map((product) => (
         <Link key={product.name} href="/Products">

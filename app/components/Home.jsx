@@ -160,7 +160,7 @@ const ProductsSection = () => (
         {
           name: "Round Plate",
           description: "Plam areca Round Plate",
-          image: "/roundPlate.jpeg.jpeg",
+          image: "/roundPlate.jpeg",
         },
       ].map((product) => (
         <Link key={product.name} href="/Products">

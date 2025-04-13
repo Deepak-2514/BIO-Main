@@ -154,7 +154,7 @@ const ProductsSection = () => (
         },
         {
           name: "Round Plate",
-          description: "Palm areca Round Plate",
+          description: "areca Round Plate",
           image: "/roundPlate.jpeg",
         },
         {

@@ -185,7 +185,6 @@ function Home() {
         <FeaturesSection />
         <ManufacturingProcess />
         <ProductsSection />
-        <ChatBot />
       </main>
     </div>
   );

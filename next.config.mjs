@@ -2,9 +2,7 @@
 const nextConfig = {
   // Enable App Router
   experimental: {
-    serverActions: {
-      allowedOrigins: ["localhost:3000"],
-    },
+    serverActions: true,
   },
   // Specify page extensions
   pageExtensions: ["js", "jsx", "ts", "tsx"],

@@ -153,14 +153,14 @@ const ProductsSection = () => (
           image: "/soupBowl.jpeg",
         },
         {
-          name: "square Tray",
-          description: "Palm areca square tray",
-          image: "/squareTray.jpeg",
+          name: "Round Plate",
+          description: "Palm areca Round Plate",
+          image: "/roundPlate.jpeg",
         },
         {
-          name: "Round Plate",
-          description: "Plam areca Round Plate",
-          image: "/roundPlate.jpeg",
+          name: "Rectangular Tray",
+          description: "Plam areca rectangular tray",
+          image: "/rectangularTray.jpeg",
         },
       ].map((product) => (
         <Link key={product.name} href="/Products">

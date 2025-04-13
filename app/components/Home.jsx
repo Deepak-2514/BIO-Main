@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Productcard from "./Productcard";
 import Link from "next/link";
-import ChatBot from "./ChatBot";
 
 const HeroSection = () => (
   <div className="w-full h-[70vh] flex items-center justify-between shadow-2xl max-md:w-[100vw] max-md:h-full max-sm:p-1 overflow-x-hidden">
@@ -176,6 +175,7 @@ const ProductsSection = () => (
     </div>
   </div>
 );
+<ChatBot />;
 
 function Home() {
   return (

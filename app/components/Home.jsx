@@ -175,7 +175,6 @@ const ProductsSection = () => (
     </div>
   </div>
 );
-<ChatBot />;
 
 function Home() {
   return (

@@ -18,7 +18,9 @@ function Footer() {
       <div className="flex flex-col gap-3 mr-20 max-md:m-0 w-fit">
         <p className="text-2xl font-black">Quick links</p>
         <ul className="gap-2 flex flex-col w-fit">
-          <li>About us</li>
+          <Link href="/About">
+            <li>About us</li>
+          </Link>
           <li>Contact us</li>
           <Link href="/Products">
             <li>Products</li>

@@ -175,7 +175,6 @@ const ProductsSection = () => (
     </div>
   </div>
 );
-
 function Home() {
   return (
     <div>

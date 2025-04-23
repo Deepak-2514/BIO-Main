@@ -47,7 +47,7 @@ export async function POST(request) {
     // Email content for admin
     const adminMailOptions = {
       from: process.env.EMAIL_USER,
-      to: ["kjdeepak2514@gmail.com", "kjdeepaksmg@gmail.com"],
+      to: ["rajusanapala1974@gmail.com", "rajus@bioareca.com"],
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
